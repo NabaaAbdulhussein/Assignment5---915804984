@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class SelectionActivity : AppCompatActivity() {
 
-    lateinit var placeName: TextView
+   // lateinit var placeName: TextView
     lateinit var placeImage: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +24,7 @@ class SelectionActivity : AppCompatActivity() {
         recyclerView.layoutManager = GridLayoutManager(this, 4)
 
         //placeName = findViewById(R.id._placeName)
-        //placeImage = findViewById(R.id._placeImage)
+        placeImage = findViewById(R.id._placeImage)
 
         //images list for pictures
         val imageList = listOf<Int>(
@@ -37,8 +36,9 @@ class SelectionActivity : AppCompatActivity() {
         //custom adapter called image adapter
         recyclerView.adapter = ImageAdapter(this, imageList, placeName, this)
     }
+
         //function for text to show name of image
-        fun onImageClicked(name: String, image: Int, view : View)
+        override fun onImageClicked(name: String, image: Int, view: View)
         {
             //image is clicked in recycler view, selected image and text
             //placeName.text = name;
@@ -47,4 +47,7 @@ class SelectionActivity : AppCompatActivity() {
             val intent = Intent(view.getContext(), DisplayActivity::class.java)
             startActivity(intent)
         }
+
+
+    }
 }

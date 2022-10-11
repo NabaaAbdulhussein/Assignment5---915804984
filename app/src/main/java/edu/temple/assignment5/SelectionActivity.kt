@@ -24,7 +24,7 @@ class SelectionActivity : AppCompatActivity() {
         recyclerView.layoutManager = GridLayoutManager(this, 4)
 
         //placeName = findViewById(R.id._placeName)
-        placeImage = findViewById(R.id._placeImage)
+        //placeImage = findViewById(R.id._placeImage)
 
         //images list for pictures
         val imageList = listOf<Int>(
@@ -38,16 +38,13 @@ class SelectionActivity : AppCompatActivity() {
     }
 
         //function for text to show name of image
-        override fun onImageClicked(name: String, image: Int, view: View)
+        fun onImageClicked(name: String, image: Int)
         {
             //image is clicked in recycler view, selected image and text
             //placeName.text = name;
             // placeImage.setImageResource(image)
 
-            val intent = Intent(view.getContext(), DisplayActivity::class.java)
+            val intent = Intent(this@SelectionActivity, DisplayActivity::class.java)
             startActivity(intent)
         }
-
-
-    }
 }

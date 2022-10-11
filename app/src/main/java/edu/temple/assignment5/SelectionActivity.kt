@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -11,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class SelectionActivity : AppCompatActivity() {
 
-   // lateinit var placeName: TextView
+    lateinit var placeName: TextView
     lateinit var placeImage: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +22,7 @@ class SelectionActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recycleView)
 
         //using grid layout manager and adding 5 images per row
-        recyclerView.layoutManager = GridLayoutManager(this, 4)
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
 
         //placeName = findViewById(R.id._placeName)
         //placeImage = findViewById(R.id._placeImage)
@@ -42,7 +43,7 @@ class SelectionActivity : AppCompatActivity() {
         {
             //image is clicked in recycler view, selected image and text
             //placeName.text = name;
-            // placeImage.setImageResource(image)
+            //placeImage.setImageResource(image)
 
             val intent = Intent(this@SelectionActivity, DisplayActivity::class.java)
             startActivity(intent)

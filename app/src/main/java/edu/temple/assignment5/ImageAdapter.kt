@@ -36,7 +36,7 @@ class ImageAdapter(private val context: Context, private val imageList: List<Int
 
     interface ImageOperations
     {
-        fun onImageClicked(name: String, image: Int, view: View)
+        fun onImageClicked(name: String, image: Int)
 
     }
 }

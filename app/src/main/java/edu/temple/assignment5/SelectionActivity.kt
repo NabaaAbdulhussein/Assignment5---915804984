@@ -46,6 +46,7 @@ class SelectionActivity : AppCompatActivity() {
             //placeImage.setImageResource(image)
 
             val intent = Intent(this@SelectionActivity, DisplayActivity::class.java)
+            intent.putExtra("image", R.drawable.chicago)
             startActivity(intent)
         }
 }

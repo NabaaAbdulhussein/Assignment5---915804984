@@ -2,6 +2,7 @@ package edu.temple.assignment5
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -37,7 +38,7 @@ class SelectionActivity : AppCompatActivity() {
         recyclerView.adapter = ImageAdapter(this, imageList, placeName, this)
     }
         //function for text to show name of image
-        override fun onImageClicked(View view)
+        fun onImageClicked(name: String, image: Int, view : View)
         {
             //image is clicked in recycler view, selected image and text
             //placeName.text = name;

@@ -8,7 +8,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 
 //custom adapter inherits from RecyclerView.Adapter
-class ImageAdapter(private val context: Context, private val imageList: List<Int>, private val placeName: List<String>, private val listener: ImageOperations): RecyclerView.Adapter<ImageAdapter.ViewHolder>()
+class ImageAdapter(private val context: Context, private val imageList: List<Int>, private val placeName: List<String>, private val listener: SelectionActivity): RecyclerView.Adapter<ImageAdapter.ViewHolder>()
 {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder

@@ -1,9 +1,39 @@
 package edu.temple.assignment5
 
-class ImageAdapter(
-    imageList: SelectionActivity,
-    placeName: List<Int>,
-    selectionActivity1: List<String>,
-    selectionActivity: SelectionActivity
-) {
+import android.view.View
+import android.widget.ImageView
+import androidx.recyclerview.widget.RecyclerView
+
+//custom adapter inherits from RecyclerView.Adapter
+class ImageAdapter(private val context: Context, private val imageList: List<Int>, private val placeName: List<String>, private val listener: ImageOperations): RecyclerView.Adapter<ImageAdapter.ViewHolder>()
+{
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
+    {
+        //declaring view
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.place_list_item, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, i: Int)
+    {
+        holder.imageView.setImageResource(imageList[i])
+        holder.imageView.setOnClickListener(View.OnClickListener{listener.onImageClicked(placeName[i], imageList[i])})
+    }
+
+    override fun getItemCount(): Int
+    {
+        return imageList.size
+    }
+
+    class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView)
+    {
+        val imageView: ImageView = itemView.findViewById(R.id.img_place)
+    }
+
+    interface ImageOperations
+    {
+        fun onImageClicked(name: String, image: Int)
+    }
 }

@@ -9,12 +9,6 @@ class DisplayActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display)
 
-        lateinit var placeName: TextView
-
-        placeName = findViewById(R.id._placeName)
-
-        //creating list of string names that represent the images
-        val placeName = listOf<String>("Chicago","New York","Paris", "Dubai", "Korea", "Istanbul","Toronto","Egypt","California","Antalya")
 
     }
 }

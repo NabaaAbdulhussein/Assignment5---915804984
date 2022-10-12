@@ -45,7 +45,6 @@ class SelectionActivity : AppCompatActivity() {
             //placeName.text = name;
             //placeImage.setImageResource(image)
 
-
             val intent = Intent(this@SelectionActivity, DisplayActivity::class.java)
             intent.putExtra("SelectedNumber", R.drawable.chicago)
             startActivity(intent)

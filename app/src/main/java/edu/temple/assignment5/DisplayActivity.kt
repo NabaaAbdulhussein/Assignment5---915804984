@@ -15,6 +15,7 @@ class DisplayActivity : AppCompatActivity() {
         var placeName: TextView = findViewById(R.id._placeName)
         var placeImage: ImageView = findViewById(R.id._placeImage)
 
+
         var selectedNumber = 1
         if (intent.extras != null) {
             selectedNumber = intent.extras!!.getInt("SelectedNumber")
@@ -23,6 +24,7 @@ class DisplayActivity : AppCompatActivity() {
         when (selectedNumber) {
             1 -> {R.drawable.chicago}
             2 -> {R.drawable.antalya}
+            //will continue
         }
 
 

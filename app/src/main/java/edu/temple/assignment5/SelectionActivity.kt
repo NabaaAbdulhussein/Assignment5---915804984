@@ -36,10 +36,11 @@ class SelectionActivity : AppCompatActivity() {
 
         //custom adapter called image adapter
         recyclerView.adapter = ImageAdapter(this, imageList, placeName, this)
+
     }
 
         //function for text to show name of image
-        fun onImageClicked(name: String, image: Int)
+        fun onImageClicked(name: String)
         {
             //image is clicked in recycler view, selected image and text
             //placeName.text = name;

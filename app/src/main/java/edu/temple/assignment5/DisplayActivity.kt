@@ -15,12 +15,18 @@ class DisplayActivity : AppCompatActivity() {
         var placeName: TextView = findViewById(R.id._placeName)
         var placeImage: ImageView = findViewById(R.id._placeImage)
 
-        val imagevalue: Int
-        //placeImage.setImageResource(imageList);
+        val name: String
         val bundle = intent.extras
-
         if (bundle != null) {
-            imagevalue = bundle.getInt("image");
+            name = bundle.getInt("chicago").toString()
         }
-    }
-}
+
+
+        }
+//
+//
+//            val intent = Intent(this, SelectionActivity::class.java)
+//            intent.putExtra("place", name)
+//            startActivity(intent)
+
+        }

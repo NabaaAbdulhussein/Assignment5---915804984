@@ -15,18 +15,32 @@ class DisplayActivity : AppCompatActivity() {
         var placeName: TextView = findViewById(R.id._placeName)
         var placeImage: ImageView = findViewById(R.id._placeImage)
 
-        val name: String
-        val bundle = intent.extras
-        if (bundle != null) {
-            name = bundle.getInt("chicago").toString()
+        var selectedNumber = 1
+        if (intent.extras != null) {
+            selectedNumber = intent.extras!!.getInt("SelectedNumber")
         }
+
+        when (selectedNumber) {
+            1 -> {R.drawable.chicago}
+            2 -> {R.drawable.antalya}
+        }
+
+
+
+
+
+
+//        val name: String
+//        val bundle = intent.extras
+//        if (bundle != null) {
+//            name = bundle.getInt("chicago").toString()
+//        }
 
 
         }
 //
 //
-//            val intent = Intent(this, SelectionActivity::class.java)
-//            intent.putExtra("place", name)
-//            startActivity(intent)
-
+//       val intent = Intent(this, SelectionActivity::class.java)
+//      intent.putExtra("place", name)
+//     startActivity(intent)
         }

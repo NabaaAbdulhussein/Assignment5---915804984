@@ -2,7 +2,6 @@ package edu.temple.assignment5
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -46,8 +45,9 @@ class SelectionActivity : AppCompatActivity() {
             //placeName.text = name;
             //placeImage.setImageResource(image)
 
+
             val intent = Intent(this@SelectionActivity, DisplayActivity::class.java)
-            intent.putExtra("image", R.drawable.chicago)
+            intent.putExtra("SelectedNumber", R.drawable.chicago)
             startActivity(intent)
         }
 }

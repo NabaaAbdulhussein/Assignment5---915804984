@@ -15,31 +15,31 @@ class DisplayActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display)
 
-        var button: Button = findViewById(R.id._button)
-        var placeName: TextView = findViewById(R.id._placeName)
-        var placeImage: ImageView = findViewById(R.id._placeImage)
+                var button: Button = findViewById(R.id._button)
+                var placeName: TextView = findViewById(R.id._placeName)
+                var placeImage: ImageView = findViewById(R.id._placeImage)
 
-        val answer = intent.extras!!.getInt("SelectedImage")
-        placeImage = ImageView(this)
 
-        placeImage.setImageResource(answer)
+        val answer = intent.extras!!.getInt("SelectedImage1")
+            placeImage.setImageResource(answer)
 
+        val answer2 = intent.extras!!.getInt("SelectedImage2")
+            placeImage.setImageResource(answer2)
 
 
 //        var selectedNumber = 1
 //        if (intent.extras != null) {
-//            selectedNumber = intent.extras!!.getInt("SelectedNumber")
+//            selectedNumber = intent.extras!!.getInt("SelectedImage")
 //        }
-//
+////
 //        when (selectedNumber) {
-//            1 -> {R.drawable.chicago}
-//            2 -> {R.drawable.antalya}
-//            will continue
+//            1 -> {R.drawable.dubai}
 //        }
-//fun
 //
-//        placeName.text = name;
-//        selectedNumber.setImageResource(image)
+//        placeImage.setImageResource(selectedNumber)
+////
+////        placeName.text = name;
+////        selectedNumber.setImageResource(image)
 
 
 

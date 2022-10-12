@@ -1,6 +1,7 @@
 package edu.temple.assignment5
 
 import android.content.Intent
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
@@ -41,12 +42,19 @@ class SelectionActivity : AppCompatActivity() {
         //function for text to show name of image
         fun onImageClicked(name: String)
         {
-            //image is clicked in recycler view, selected image and text
-            //placeName.text = name;
-            //placeImage.setImageResource(image)
-
             val intent = Intent(this@SelectionActivity, DisplayActivity::class.java)
-            intent.putExtra("SelectedImage", R.drawable.chicago)
+            intent.putExtra("SelectedImage1", R.drawable.chicago)
+            intent.putExtra("SelectedImage2", R.drawable.nyc)
+//            intent.putExtra("SelectedImage3", R.drawable.paris)
+//            intent.putExtra("SelectedImage4", R.drawable.dubai)
+//            intent.putExtra("SelectedImage5", R.drawable.korea)
+//            intent.putExtra("SelectedImage6", R.drawable.istanbul)
+//            intent.putExtra("SelectedImage7", R.drawable.toronto)
+//            intent.putExtra("SelectedImage8", R.drawable.egypt)
+//            intent.putExtra("SelectedImage9", R.drawable.california)
+//            intent.putExtra("SelectedImage10", R.drawable.antalya)
             startActivity(intent)
+
+
         }
 }

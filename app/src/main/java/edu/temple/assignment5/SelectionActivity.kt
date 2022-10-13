@@ -1,7 +1,6 @@
 package edu.temple.assignment5
 
 import android.content.Intent
-import android.graphics.Bitmap
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
@@ -19,13 +18,14 @@ class SelectionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //to change title of activity
+        val actionBar = supportActionBar
+        actionBar!!.title = "Select a location"
+
         val recyclerView = findViewById<RecyclerView>(R.id.recycleView)
 
         //using grid layout manager and adding 5 images per row
         recyclerView.layoutManager = GridLayoutManager(this, 2)
-
-        //placeName = findViewById(R.id._placeName)
-        //placeImage = findViewById(R.id._placeImage)
 
         //images list for pictures
         val imageList = listOf<Int>(
@@ -36,25 +36,13 @@ class SelectionActivity : AppCompatActivity() {
 
         //custom adapter called image adapter
         recyclerView.adapter = ImageAdapter(this, imageList, placeName, this)
-
     }
-
         //function for text to show name of image
-        fun onImageClicked(name: String)
+        fun onImageClicked(name: String, image: Int)
         {
             val intent = Intent(this@SelectionActivity, DisplayActivity::class.java)
-            intent.putExtra("SelectedImage1", R.drawable.chicago)
-            intent.putExtra("SelectedImage2", R.drawable.nyc)
-//            intent.putExtra("SelectedImage3", R.drawable.paris)
-//            intent.putExtra("SelectedImage4", R.drawable.dubai)
-//            intent.putExtra("SelectedImage5", R.drawable.korea)
-//            intent.putExtra("SelectedImage6", R.drawable.istanbul)
-//            intent.putExtra("SelectedImage7", R.drawable.toronto)
-//            intent.putExtra("SelectedImage8", R.drawable.egypt)
-//            intent.putExtra("SelectedImage9", R.drawable.california)
-//            intent.putExtra("SelectedImage10", R.drawable.antalya)
+            intent.putExtra("SelectedImage1", image)
+            intent.putExtra("SelectedImage2", name)
             startActivity(intent)
-
-
         }
 }

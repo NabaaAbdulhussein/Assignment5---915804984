@@ -1,7 +1,7 @@
 package edu.temple.assignment5
 
-import android.view.LayoutInflater
 import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 //custom adapter inherits from RecyclerView.Adapter
 class ImageAdapter(private val context: Context, private val imageList: List<Int>, private val placeName: List<String>, private val listener: SelectionActivity): RecyclerView.Adapter<ImageAdapter.ViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         //declaring view
         val view =
@@ -18,8 +19,11 @@ class ImageAdapter(private val context: Context, private val imageList: List<Int
 
     override fun onBindViewHolder(holder: ViewHolder, i: Int) {
         holder.imageView.setImageResource(imageList[i])
-        holder.imageView.setOnClickListener(View.OnClickListener { listener.onImageClicked(placeName[i]) })
-        //holder.bind(imageList[i], listener)
+        holder.imageView.setOnClickListener(View.OnClickListener {
+            listener.onImageClicked(
+                placeName[i],
+                imageList[i]
+            )})
     }
 
     override fun getItemCount(): Int {
@@ -28,14 +32,9 @@ class ImageAdapter(private val context: Context, private val imageList: List<Int
 
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val imageView: ImageView = itemView.findViewById(R.id.img_place)
+    }
 
-        //fun bind(name: Int, listener: SelectionActivity) {
-            //imageView.text = name
-            //imageView.setOnClickListener {
-             //   listener.onImageClicked(name.toString())
-            }
-        }
-
-        interface ImageOperations {
-            fun onImageClicked(name: String, image: Int)
-        }
+    interface ImageOperations {
+        fun onImageClicked(name: String, image: Int)
+    }
+}

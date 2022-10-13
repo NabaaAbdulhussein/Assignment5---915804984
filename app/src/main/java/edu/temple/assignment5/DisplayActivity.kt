@@ -15,48 +15,25 @@ class DisplayActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display)
 
-                var button: Button = findViewById(R.id._button)
-                var placeName: TextView = findViewById(R.id._placeName)
-                var placeImage: ImageView = findViewById(R.id._placeImage)
+        //to change title of activity
+        val actionBar = supportActionBar
+        actionBar!!.title = "Display location"
+
+        var button: Button = findViewById(R.id._button)
+        var placeName: TextView = findViewById(R.id._placeName)
+        var placeImage: ImageView = findViewById(R.id._placeImage)
 
 
         val answer = intent.extras!!.getInt("SelectedImage1")
-            placeImage.setImageResource(answer)
+        placeImage.setImageResource(answer)
 
-        val answer2 = intent.extras!!.getInt("SelectedImage2")
-            placeImage.setImageResource(answer2)
+        val NameAnswer = intent.extras!!.getString("SelectedImage2")
+        placeName.text = NameAnswer
 
-
-//        var selectedNumber = 1
-//        if (intent.extras != null) {
-//            selectedNumber = intent.extras!!.getInt("SelectedImage")
-//        }
-////
-//        when (selectedNumber) {
-//            1 -> {R.drawable.dubai}
-//        }
-//
-//        placeImage.setImageResource(selectedNumber)
-////
-////        placeName.text = name;
-////        selectedNumber.setImageResource(image)
-
-
-
-
-
-
-//        val name: String
-//        val bundle = intent.extras
-//        if (bundle != null) {
-//            name = bundle.getInt("chicago").toString()
-//        }
-
-
+        //Button to go back to previous activity
+        button.setOnClickListener(){
+            finish()
         }
-//
-//
-//       val intent = Intent(this, SelectionActivity::class.java)
-//      intent.putExtra("place", name)
-//     startActivity(intent)
+
+    }
         }
